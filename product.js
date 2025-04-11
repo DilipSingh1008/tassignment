@@ -67,41 +67,56 @@ $(document).ready(function () {
 });
 
 
-  const gstCheck = document.getElementById('gstInclusiveCheck');
-  const gstRate = document.getElementById('gstRate');
+const gstCheck = document.getElementById('gstInclusiveCheck');
+const gstRate = document.getElementById('gstRate');
 
-  function toggleGstInput() {
-    gstRate.disabled = !gstCheck.checked;
+function toggleGstInput() {
+  gstRate.disabled = !gstCheck.checked;
+}
+
+toggleGstInput();
+gstCheck.addEventListener('change', toggleGstInput);
+
+const form = document.querySelector('.addform');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const data = {};
+
+  for (const [key, value] of formData.entries()) {
+    const input = form.elements[key];
+    if (input && input.type === 'checkbox') {
+      data[key] = input.checked;
+    } else {
+      data[key] = value;
+    }
   }
 
-  toggleGstInput();
+  const imageFile = formData.get('productImages');
 
-  gstCheck.addEventListener('change', toggleGstInput);
+  if (imageFile && imageFile.size > 0) {
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      data.productImages = {
+        url: event.target.result, 
+      };
 
-  const form = document.querySelector('.addform');
+      localStorage.setItem('productFormData', JSON.stringify(data));
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const data = {};
-
-    for (const [key, value] of formData.entries()) {
-      const input = form.elements[key];
-      if (input && input.type === 'checkbox') {
-        data[key] = input.checked;
-      } else {
-        data[key] = value;
-      }
-    }
-
+      alert('Form data saved to localStorage!');
+      window.location.href = "Dashbord.html";
+    };
+    reader.readAsDataURL(imageFile); 
+  } else {
+    data.productImages = {};
     localStorage.setItem('productFormData', JSON.stringify(data));
+    alert('Form data saved without image!');
+    window.location.href = "Dashbord.html";
+  }
+});
 
-    alert('Form data saved to localStorage!');
-    location.reload()
-    window.location.href ="Dashbord.html"
-
-  });
 
   // window.addEventListener('DOMContentLoaded', () => {
   //   const savedData = localStorage.getItem('productFormData');
