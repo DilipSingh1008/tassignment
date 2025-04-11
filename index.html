@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTP Verification</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1f2b2e;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .otp-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .otp-box input {
+      text-align: center;
+      letter-spacing: 3px;
+    }
+    .btn-main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn{
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(108, 201, 108);
+      border: none;      
+    }
+  </style>
+</head>
+
+<body>
+  <div class="otp-box text-center">
+    <h5><strong>Create<span style="color:#00bfff;">Store</span></strong></h5>
+    <p class="text-muted">We have sent an OTP to your localStorage. Please enter it below to proceed.</p>
+
+    <input type="text" id="otpInput" maxlength="6" class="form-control mb-3" placeholder="Enter OTP" />
+
+    <p id="timer">Resend OTP in 01:00</p>
+
+    <div class="btn-main">
+      <button class="btn btn-primary" onclick="submitOTP()">LET'S GO</button>
+    </div>
+  </div>
+
+  <script>
+    let timerDuration = 60;
+    let countdownInterval;
+    const timerDisplay = document.getElementById("timer");
+
+    const generateOTP = () => {
+      const otp = Math.floor(100000 + Math.random() * 900000);
+      localStorage.setItem("generated_otp", otp);
+      console.log("Generated OTP:", otp);
+    };
+    // generateOTP();
+    const startTimer = () => {
+      clearInterval(countdownInterval);
+      timerDuration = 60;
+      const countdown = setInterval(() => {
+        const minutes = Math.floor(timerDuration / 60);
+        const seconds = timerDuration % 60;
+        timerDisplay.textContent = `Resend OTP in ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        timerDuration--;
+
+        if (timerDuration < 0) {
+          clearInterval(countdown);
+          timerDisplay.innerHTML = `<a href="#" onclick="resendOTP()">Resend OTP</a>`;
+        }
+      }, 1000);
+    };
+    const resendOTP = () => {
+      generateOTP();
+      startTimer();
+      alert("New OTP has been sent!");
+    };
+    const submitOTP = () => {
+      const otp = document.getElementById("otpInput").value;
+      if (otp.length === 6) {
+        alert("Welcome To our Website");
+        location.href = 'Home.html'
+
+
+      } else {
+        alert("Please enter a valid 6-digit OTP.");
+      }
+    };
+
+    const editMobile = () => {
+      alert("Redirecting to edit mobile number...");
+    };
+
+    startTimer();
+  </script>
+</body>
+
+</html>

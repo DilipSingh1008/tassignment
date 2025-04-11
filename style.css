@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  height: 100%;
+  width: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  background-color: #e5e5e5;
+
+}
+
+.Mini1,
+.mini2 {
+  flex: 1 1 45%;
+  min-width: 300px;
+  min-height: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.Mini1 {
+  /* border: 2px solid rgb(29, 29, 31); */
+
+}
+
+.mb-3 {
+  width: 100%;
+}
+
+.mb-3>label {
+  font-weight: bold;
+}
+
+.form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.form>h2 {
+  font-weight: bold;
+}
+
+.text-end {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  gap: 70px;
+}
+
+.btn {
+  width: 120px;
+}
+
+.mini2 {
+  min-height: 440px;
+  width: 45%;
+  /* border: 2px solid rgb(28, 76, 209); */
+  background-color: #7ddf64;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  border-radius: 5px;
+  /* position: relative; */
+}
+
+/* Main box wrapper */
+.box {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 100%;
+  justify-content: center;
+  /* height: 100%; */
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid black; */
+  width: 100%;
+  /* gap: 30px; */
+}
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 25px;
+  width: 60px;
+  height: 80px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.horizontal-step {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: start; */
+}
+
+.arrow {
+  font-size: 60px;
+  display: flex;
+  margin-left: 73px;
+  margin-top: -33px;
+  margin-bottom: -20px;
+}
+
+.arrow1 {
+  font-size: 64px;
+  /* padding-top: 0px; */
+  margin-top: -16px;
+  margin-left: -13px;
+  margin-right: -10px;
+}
+
+
+
+.step-blue {
+  background-color: #6f42c1;
+}
+
+.step-yellow {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.step-purple {
+  background-color: #ca7df9;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .Mini1,
+  .mini2 {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+}
+
+
+
+/* add Product css  */

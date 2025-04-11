@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="Mini1">
+            <form class="form" id="myForm">
+                <h2 class="mb-4">Let's Add a Type, Category, and Sub-category</h2>
+                <div class="mb-3">
+                    <label for="productType" class="form-label">Add a Product Type <span
+                            class="text-danger">*</span></label>
+                    <input type="text" id="productType" class="form-control" placeholder="Enter product type" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label">Add a Category (optional)</label>
+                    <input type="text" id="category" class="form-control" placeholder="Enter category">
+                </div>
+
+                <div class="mb-3">
+                    <label for="subCategory" class="form-label">Add a Sub-category (optional)</label>
+                    <input type="text" id="subCategory" class="form-control" placeholder="Enter sub-category">
+                </div>
+                <div class="text-end ">
+                    <button class="btn btn-secondary" id="backbtn">Back</button>
+                    <button type="submit"id="nextBtn" class="btn btn-primary">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="mini2">
+            <div class="box">
+                <div class="steps-container">
+                  <div class="step step-blue">Product Type</div>
+                  <span class="arrow">&#8595;</span>
+                  <div class="step step-yellow">Category</div>
+                  <span class="arrow">&#8595;</span>
+                  <div class="horizontal-step">
+                    <div class="step step-yellow">Sub-Category</div>
+                    <span class="arrow1">&#8594;</span>
+                    <div class="step step-purple">Product</div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</body>
+<script src="./redirect.js"></script>
+</html>

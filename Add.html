@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="./add.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+<body>
+    <div class="container">
+        <div class="scrollable-div">
+            <h2 class="mb-4 text2">Add Your First Product</h2>
+
+            <form class="addform">
+                <h5 class="mb-3" style="font-weight: bold;">Basic Details</h5>
+          
+                <div class="mb-3">
+                  <label class="form-label">Product name</label>
+                  <input type="text" class="form-control" placeholder="eg - anatomy book" name="productName">
+                </div>
+          
+                <div class="mb-3">
+                  <label class="form-label">Product Description</label>
+                  <textarea class="form-control" placeholder="Input text" rows="3" name="productDescription"></textarea>
+                </div>
+          
+                <div class="mb-3">
+                  <label class="form-label">Add Image(s)</label>
+                  <input type="file" class="form-control" name="productImages">
+                  <!-- <input type="file" name="productImages" accept="image/*"> -->
+
+                </div>
+          
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="skuCheck" checked name="hasSKU">
+                  <label class="form-check-label" for="skuCheck">
+                    this product has an SKU code
+                  </label>
+                </div>
+          
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="eg - PROD0001" name="skuCode">
+                </div>
+          
+                <div class="form-check mb-4">
+                  <input class="form-check-input" type="checkbox" id="hsnCheck" name="hasHSN">
+                  <label class="form-check-label" for="hsnCheck">
+                    this product has an HSN/SAC code
+                  </label>
+                </div>
+          
+                <hr class="hr">
+          
+              <h5 class="mb-3">Pricing Details</h5>
+          
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="gstInclusiveCheck" checked name="inclusiveGST" />
+                <label class="form-check-label" for="gstInclusiveCheck">
+                  Price inclusive of GST
+                </label>
+              </div>
+          
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Net price</label>
+                    <input type="number" class="form-control" placeholder="eg - 10" name="netPrice" readonly>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">List price</label>
+                    <input type="number" class="form-control" placeholder="eg - 120" name="listPrice">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Discount percentage</label>
+                    <input type="number" class="form-control" placeholder="eg - 50" name="discountPercent">
+                  </div>
+                  <div class="col-md-6 mb-3" id="gstRateInput">
+                    <label class="form-label">GST rate</label>
+                    <input type="number" class="form-control" placeholder="eg - 30" name="gstRate" id="gstRate" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Shipping charges (if any)</label>
+                    <input type="number" class="form-control" placeholder="eg - 60" name="shippingCharges">
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label class="form-label">Stock level</label>
+                    <input type="number" class="form-control" placeholder="eg - 10" name="stockLevel">
+                  </div>
+                </div>
+          
+                <div class="d-flex justify-content-between">
+                  <button type="button" id="backbtn" class="btn btn-outline-secondary">&lt; Back</button>
+                  <button type="submit" class="btn btn-primary">Next</button>
+                </div>
+              </form>
+        </div>
+      
+        <!-- <div class="static-div">
+          <h1>Image Div</h1>
+        </div> -->
+        <div class="static-div p-3 border rounded text-center" style="background: #f8f9fa;">
+          <h3 class="mb-3">Live Product Preview</h3>
+          <div class="Image">
+            <i class="fa-solid fa-image" id="imageIcon"></i>
+            <img id="previewImage" src="" alt="Product Image">
+          </div>
+         <div class="details">
+          <div><span id="previewName">Product title</span></div>
+          <div><span id="previewDescription">Product description will appear here...</span></div>
+          <div class="ratedata"><span id="previewNetPrice" class="highlight-net">RS 0.00</span><span id="previewListPrice" class="highlight-list">RS 0.00</span></div>
+          <div></div>
+          <div class="ratspan"><span id="previewExtras"></span></div>
+         </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./product.js"></script>  
+</body>
+</html>

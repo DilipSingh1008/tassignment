@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e5e5e5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.scrollable-div,
+.static-div {
+  flex: 1 1 500px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.scrollable-div {
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+h2.text2 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+.addform label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.form-check-label {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.addform input,
+.addform textarea {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  font-size: 0.95rem;
+}
+
+.hr {
+  border: none;
+  height: 2px;
+  background-color: #000;
+  margin: 30px 0;
+}
+
+.static-div h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.Image {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* background-color: #dee2e6; */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  #imageIcon,
+  #previewImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 2px solid red; */
+  }
+
+  #imageIcon {
+    font-size: 90px;
+    /* color: #adb5bd; */
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+  }
+
+  #previewImage {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+  }
+  
+
+.details span {
+  /* display: block; */
+  display: flex;
+  justify-content: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 8px;
+  /* border: 2px solid red; */
+}
+
+.preview div {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #495057;
+  }
+  
+
+.ratedata{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    /* border: 2px solid red; */
+    justify-content: start;
+    align-items: center;
+}
+
+  /* #previewNetPrice {
+    font-size: 1.2rem;
+    font-weight: bold;
+  } */
+
+/* new add */
+#previewNetPrice {
+    color: #28a745; /* green */
+    font-weight: 600;
+    font-size: 25px;
+  }
+  
+  #previewListPrice {
+    color: #000; /* black */
+    font-weight: 500;
+    font-size: 16px;
+  }
+  input[name="listPrice"] {
+    background-color: #fff3cd; /* Light yellow */
+    border: 2px solid #ffeeba;
+  }
+
+  input[name="gstRate"] {
+    background-color: #d1ecf1; /* Light blue */
+    border: 2px solid #bee5eb;
+  }
+
+  input[name="discountPercent"] {
+    background-color: #f8d7da; 
+    border: 2px solid #f5c6cb;
+  }
+
+  input[name="shippingCharges"] {
+    background-color: #d4edda; 
+    border: 2px solid #c3e6cb;
+  }
+
+  input[name="netPrice"] {
+    background-color: #e2e3e5; 
+    border: 2px solid #d6d8db;
+    font-weight: bold;
+  }
+
+  input.form-control {
+    transition: 0.3s ease;
+    box-shadow: none;
+  }
+
+  input.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  .ratspan{
+    display: flex;
+    flex-direction: row;
+    /* gap: 8px; */
+  }
+  #previewExtras{
+    color: #28a745;
+    /* gap: 5px; */
+  }
+
+  
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .scrollable-div,
+  .static-div {
+    flex: 1 1 100%;
+  }
+
+  .Image {
+    height: 150px;
+  }
+
+  #imageIcon {
+    font-size: 40px;
+  }
+}
+
