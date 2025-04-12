@@ -146,10 +146,10 @@ form.addEventListener('submit', function (e) {
       const gstRate = parseFloat($('input[name="gstRate"]').val()) || 0;
       const discount = parseFloat($('input[name="discountPercent"]').val()) || 0;
       const shipping = parseFloat($('input[name="shippingCharges"]').val()) || 0;
-  
+  // console.log(listPrice);
       const netPrice = listPrice + (listPrice * gstRate / 100);
       $('input[name="netPrice"]').val(netPrice.toFixed(2)); 
-  
+    // console.log(netPrice);
       $('#previewNetPrice').text(`RS ${netPrice.toFixed(2)}`);
       $('#previewListPrice').text(`RS ${listPrice.toFixed(2)}`);
   
